@@ -27,8 +27,8 @@ shuffleList xs = do
 -- Function to create a list of 10 users with unique emails and randomly assigned prizes
 createRandomUsers :: IO [User]
 createRandomUsers = do
-    let userNames = ["User1", "User2", "User3", "User4", "User5", "User6", "User7", "User8", "User9", "User10"]
-        prizes = ["Prize1", "Prize2", "Prize3", "Prize4", "Prize5", "Prize6", "Prize7", "Prize8", "Prize9", "Prize10"]
+    let userNames = ["John", "Jane", "Anna", "Bob", "Tom", "Sabrina", "Mike", "Serena", "Itan", "Mark"]
+        prizes = ["50", "100", "150", "200", "300", "500", "700", "1000", "1500", "2500", "5000", "10000", "100000", "500000", "1000000"]
     shuffledUserNames <- shuffleList userNames
     shuffledPrizes <- shuffleList prizes
     let uniqueEmails = map (\i -> "user" ++ show i ++ "@example.com") [1..10]
