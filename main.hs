@@ -28,11 +28,11 @@ shuffleList xs = do
 createRandomUsers :: IO [User]
 createRandomUsers = do
     let userNames = ["John", "Jane", "Anna", "Bob", "Tom", "Sabrina", "Mike", "Serena", "Itan", "Mark"]
-        prizes = ["50", "100", "150", "200", "300", "500", "700", "1000", "1500", "2500", "5000", "10000", "100000", "500000", "1000000"]
+        prizeNames = ["50$", "100$", "150$", "200$", "300$", "500$", "700$", "1000$", "1500", "2500$", "5000$", "10000$", "100000$", "500000$", "1000000$"]
     shuffledUserNames <- shuffleList userNames
-    shuffledPrizes <- shuffleList prizes
+    shuffledPrizeNames <- shuffleList prizeNames
     let uniqueEmails = map (\i -> "user" ++ show i ++ "@example.com") [1..10]
-        users = zipWith3 (\name email prize -> User name email prize) shuffledUserNames uniqueEmails shuffledPrizes
+        users = zipWith3 (\name email prize -> User name email prize) shuffledUserNames uniqueEmails shuffledPrizeNames
     return users
 
 main :: IO ()
