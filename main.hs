@@ -37,5 +37,6 @@ createRandomUsers = do
 
 main :: IO ()
 main = do
+    -- Generate and print a list of 10 random users
     randomUsers <- createRandomUsers
     mapM_ print randomUsers
